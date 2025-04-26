@@ -20,7 +20,7 @@ export const useWeatherForecast = () => {
                     setForecast(data);
                     setLoading(false);
                 })
-                .catch((err) => {
+                .catch(() => {
                     setError("Failed to get weather forecast");
                     setLoading(false);
                 });
