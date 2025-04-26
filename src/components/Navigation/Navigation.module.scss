@@ -2,6 +2,10 @@
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.5rem 0;
 }
 
 .navList {
@@ -10,19 +14,23 @@
   padding: 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .navItem {
-  margin: 0 1rem;
+  margin: 0;
 }
 
 .navLink {
   display: block;
-  padding: 1rem;
+  padding: 0.5rem 0.75rem;
   color: #333;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
+  white-space: nowrap;
+  font-size: 0.9rem;
 
   &:hover {
     color: #007bff;
@@ -31,5 +39,26 @@
   &.active {
     color: #007bff;
     border-bottom: 2px solid #007bff;
+  }
+}
+
+@media (max-width: 576px) {
+  .navigation {
+    padding: 0.25rem 0;
+  }
+
+  .navList {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 0.5rem;
+  }
+
+  .navItem {
+    margin: 0;
+  }
+
+  .navLink {
+    padding: 0.5rem;
+    font-size: 0.85rem;
   }
 } 
