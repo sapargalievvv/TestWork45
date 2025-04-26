@@ -7,9 +7,7 @@ import { ForecastResponse } from "@/types/weather";
 
 export const useWeatherForecast = () => {
     const currentCity = useWeatherStore((state) => state.currentCity);
-    const [forecast, setForecast] = useState<ForecastResponse["list"][] | null>(
-        null
-    );
+    const [forecast, setForecast] = useState<ForecastResponse | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 

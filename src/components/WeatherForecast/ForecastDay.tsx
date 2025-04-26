@@ -1,21 +1,7 @@
 "use client";
 
 import styles from './WeatherForecast.module.scss';
-
-export interface ForecastItem {
-  dt: number;
-  main: {
-    temp: number;
-    humidity: number;
-  };
-  weather: {
-    description: string;
-    icon: string;
-  }[];
-  wind: {
-    speed: number;
-  };
-}
+import { ForecastItem } from '@/types/weather';
 
 interface ForecastDayProps {
   date: string;

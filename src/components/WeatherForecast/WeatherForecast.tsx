@@ -28,6 +28,8 @@ export const WeatherForecast = () => {
 
   const dailyForecast = groupForecastByDay(forecast);
 
+  console.log('dailyForecast', dailyForecast);
+
   return (
     <div className={styles.forecastContainer}>
       <h1 className='text-center mb-4'>Weather forecast for {currentCity}</h1>
