@@ -11,11 +11,11 @@ export const WeatherForecast = () => {
   const { forecast, loading, error } = useWeatherForecast();
 
   if (!currentCity) {
-    return <div className={styles.placeholder}>Выберите город для просмотра прогноза</div>;
+    return <div className={styles.placeholder}>Select a city to view forecast</div>;
   }
 
   if (loading) {
-    return <div className={styles.loading}>Загрузка прогноза...</div>;
+    return <div className={styles.loading}>Loading forecast...</div>;
   }
 
   if (error) {
@@ -30,7 +30,7 @@ export const WeatherForecast = () => {
 
   return (
     <div className={styles.forecastContainer}>
-      <h2>Прогноз погоды для {currentCity}</h2>
+      <h1 className='text-center mb-4'>Weather forecast for {currentCity}</h1>
       <div className={styles.forecastGrid}>
         {Object.entries(dailyForecast).map(([date, items]) => (
           <ForecastDay key={date} date={date} items={items} />

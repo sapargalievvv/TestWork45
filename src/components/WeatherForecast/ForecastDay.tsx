@@ -2,7 +2,7 @@
 
 import styles from './WeatherForecast.module.scss';
 
-interface ForecastItem {
+export interface ForecastItem {
   dt: number;
   main: {
     temp: number;
@@ -30,7 +30,7 @@ export const ForecastDay = ({ date, items }: ForecastDayProps) => {
         {items.map((item, index) => (
           <div key={index} className={styles.forecastItem}>
             <div className={styles.time}>
-              {new Date(item.dt * 1000).toLocaleTimeString('ru-RU', { 
+              {new Date(item.dt * 1000).toLocaleTimeString('en-US', { 
                 hour: '2-digit', 
                 minute: '2-digit' 
               })}
@@ -41,8 +41,8 @@ export const ForecastDay = ({ date, items }: ForecastDayProps) => {
             />
             <div className={styles.temp}>{Math.round(item.main.temp)}°C</div>
             <div className={styles.details}>
-              <div>Влажность: {item.main.humidity}%</div>
-              <div>Ветер: {item.wind.speed} м/с</div>
+              <div>Humidity: {item.main.humidity}%</div>
+              <div>Wind: {item.wind.speed} m/s</div>
             </div>
           </div>
         ))}

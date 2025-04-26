@@ -22,11 +22,11 @@ export const WeatherCard = () => {
   };
 
   if (!currentCity) {
-    return <div className={styles.placeholder}>Введите город для поиска</div>;
+    return <div className={styles.placeholder}>Enter a city to search</div>;
   }
 
   if (loading) {
-    return <div className={styles.loading}>Загрузка...</div>;
+    return <div className={styles.loading}>Loading...</div>;
   }
 
   if (error) {
@@ -44,7 +44,7 @@ export const WeatherCard = () => {
         <button
           className={`${styles.favoriteButton} ${isFavorite ? styles.active : ''}`}
           onClick={handleToggleFavorite}
-          title={isFavorite ? 'Удалить из избранного' : 'Добавить в избранное'}
+          title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
         >
           {isFavorite ? '★' : '☆'}
         </button>
@@ -58,9 +58,9 @@ export const WeatherCard = () => {
           <span>{Math.round(weather.main.temp)}°C</span>
         </div>
         <div className={styles.details}>
-          <p>Влажность: {weather.main.humidity}%</p>
-          <p>Давление: {weather.main.pressure} hPa</p>
-          <p>Скорость ветра: {weather.wind.speed} м/с</p>
+          <p>Humidity: {weather.main.humidity}%</p>
+          <p>Pressure: {weather.main.pressure} hPa</p>
+          <p>Wind speed: {weather.wind.speed} m/s</p>
           <p className={styles.description}>{weather.weather[0].description}</p>
         </div>
       </div>

@@ -34,7 +34,7 @@ export const useFavoriteCitiesWeather = (favoriteCities: string[]) => {
           setLoading(false);
         })
         .catch(() => {
-          setError('Не удалось загрузить данные о погоде');
+          setError('Failed to load weather data');
           setLoading(false);
         });
     } else {

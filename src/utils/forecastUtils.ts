@@ -1,12 +1,16 @@
-export const groupForecastByDay = (
-    forecast: ForecastResponse["list"]
-): DailyForecast => {
+import { ForecastResponse, ForecastItem } from '@/types/weather';
+
+interface DailyForecast {
+    [key: string]: ForecastItem[];
+}
+
+export const groupForecastByDay = (forecast: ForecastResponse): DailyForecast => {
     return forecast.list.reduce(
-        (acc: DailyForecast, item: ForecastResponse["list"][0]) => {
-            const date = new Date(item.dt * 1000).toLocaleDateString("ru-RU", {
-                weekday: "long",
-                day: "numeric",
-                month: "long",
+        (acc: DailyForecast, item: ForecastItem) => {
+            const date = new Date(item.dt * 1000).toLocaleDateString('en-US', {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'long'
             });
 
             if (!acc[date]) {

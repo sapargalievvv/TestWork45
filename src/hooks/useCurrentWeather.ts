@@ -36,7 +36,7 @@ export const useCurrentWeather = () => {
           setLoading(false);
         })
         .catch((err) => {
-          setError('Не удалось получить данные о погоде');
+          setError('Failed to get weather data');
           setLoading(false);
         });
     }

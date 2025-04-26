@@ -24,7 +24,7 @@ export const FavoriteCityCard = ({
         <button
           className={styles.removeButton}
           onClick={() => onRemove(city)}
-          title="Удалить из избранного"
+          title="Remove from favorites"
         >
           ×
         </button>

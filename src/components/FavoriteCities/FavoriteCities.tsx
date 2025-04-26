@@ -10,7 +10,7 @@ export const FavoriteCities = () => {
   const { favoriteCitiesWeather, loading, error } = useFavoriteCitiesWeather(favoriteCities);
 
   if (loading) {
-    return <div className={styles.loading}>Загрузка избранных городов...</div>;
+    return <div className={styles.loading}>Loading favorite cities...</div>;
   }
 
   if (error) {
@@ -18,12 +18,11 @@ export const FavoriteCities = () => {
   }
 
   if (favoriteCities.length === 0) {
-    return <div className={styles.placeholder}>Нет избранных городов</div>;
+    return <div className={styles.placeholder}>No favorite cities</div>;
   }
 
   return (
     <div className={styles.favoriteCities}>
-      <h2>Избранные города</h2>
       <div className={styles.citiesGrid}>
         {favoriteCitiesWeather.map((weather) => (
           <FavoriteCityCard

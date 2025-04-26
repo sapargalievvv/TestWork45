@@ -22,12 +22,12 @@ export const SearchBar = () => {
         <input
           type="text"
           className="form-control"
-          placeholder="Введите название города"
+          placeholder="Enter city name"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         <button className="btn btn-primary" type="submit">
-          Поиск
+          Search
         </button>
       </div>
     </form>

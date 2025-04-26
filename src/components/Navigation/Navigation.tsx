@@ -15,7 +15,7 @@ export const Navigation = () => {
             href="/"
             className={`${styles.navLink} ${pathname === '/' ? styles.active : ''}`}
           >
-            Текущая погода
+            Current Weather
           </Link>
         </li>
         <li className={styles.navItem}>
@@ -23,7 +23,7 @@ export const Navigation = () => {
             href="/forecast"
             className={`${styles.navLink} ${pathname === '/forecast' ? styles.active : ''}`}
           >
-            Прогноз
+            Forecast
           </Link>
         </li>
         <li className={styles.navItem}>
@@ -31,7 +31,7 @@ export const Navigation = () => {
             href="/favorites"
             className={`${styles.navLink} ${pathname === '/favorites' ? styles.active : ''}`}
           >
-            Избранное
+            Favorites
           </Link>
         </li>
       </ul>

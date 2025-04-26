@@ -23,7 +23,7 @@ export const useWeatherForecast = () => {
                     setLoading(false);
                 })
                 .catch((err) => {
-                    setError("Не удалось получить прогноз погоды");
+                    setError("Failed to get weather forecast");
                     setLoading(false);
                 });
         }
