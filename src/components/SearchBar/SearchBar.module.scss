@@ -1,0 +1,26 @@
+.searchForm {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+
+  .input-group {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    .form-control {
+      border: none;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
+    }
+  }
+} 
