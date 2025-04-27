@@ -4,36 +4,28 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Navigation.module.scss';
 
+const routes = [
+  { path: '/', label: 'Current Weather' },
+  { path: '/forecast', label: 'Forecast' },
+  { path: '/favorites', label: 'Favorites' },
+];
+
 export const Navigation = () => {
   const pathname = usePathname();
 
   return (
     <nav className={styles.navigation}>
       <ul className={styles.navList}>
-        <li className={styles.navItem}>
-          <Link
-            href="/"
-            className={`${styles.navLink} ${pathname === '/' ? styles.active : ''}`}
-          >
-            Current Weather
-          </Link>
-        </li>
-        <li className={styles.navItem}>
-          <Link
-            href="/forecast"
-            className={`${styles.navLink} ${pathname === '/forecast' ? styles.active : ''}`}
-          >
-            Forecast
-          </Link>
-        </li>
-        <li className={styles.navItem}>
-          <Link
-            href="/favorites"
-            className={`${styles.navLink} ${pathname === '/favorites' ? styles.active : ''}`}
-          >
-            Favorites
-          </Link>
-        </li>
+        {routes.map((route) => (
+          <li key={route.path} className={styles.navItem}>
+            <Link
+              href={route.path}
+              className={`${styles.navLink} ${pathname === route.path ? styles.active : ''}`}
+            >
+              {route.label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );
